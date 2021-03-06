@@ -3,17 +3,19 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
-                sh 'make'
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/RevanthTiruveedhi/PythonFlaskApp.git']]])
+                git branch: 'main', url: 'https://github.com/RevanthTiruveedhi/PythonFlaskApp.git'
+                sh 'python app.py'
             }
         }
         stage('Test') { 
             steps {
-                sh 'make check' 
+                sh 'echo working' 
             }
         }
         stage('Deploy') { 
             steps {
-                sh 'make publish'
+                sh 'echo deployworking'
             }
         }
     }
