@@ -5,8 +5,9 @@ pipeline {
             steps {
                 checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/RevanthTiruveedhi/PythonFlaskApp.git']]])
                 git branch: 'main', url: 'https://github.com/RevanthTiruveedhi/PythonFlaskApp.git'                
-                sh 'cd PythonFlaskApp'
+                sh 'cd /home/revanth_tiruveedhi'
                 sh 'git clone https://github.com/RevanthTiruveedhi/PythonFlaskApp.git'
+                sh 'cd /home/revanth_tiruveedhi/PythonFlaskApp'
                 sh 'python app.py'
             }
         }
