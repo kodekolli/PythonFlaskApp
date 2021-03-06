@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'echo working' 
+                sh 'pytest test_unit_app.py' 
             }
         }
         stage('Deploy') { 
