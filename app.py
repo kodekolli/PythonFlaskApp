@@ -3,8 +3,8 @@ Flask App
 '''
 from flask import Flask
 from flask_restful import Api  # pragma: no cover
-from handlers.routes import configure_routes
-from handlers.api import sampleAPI  # pragma: no cover
+from Python_Flask_App.handlers.routes import configure_routes
+from Python_Flask_App.handlers.api import sampleAPI  # pragma: no cover
 
 app = Flask(__name__)
 api = Api(app)
