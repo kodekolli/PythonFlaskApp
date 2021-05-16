@@ -10,7 +10,7 @@ def configure_routes(app):
     app.permanent_session_lifetime = timedelta(minutes=5)
     #app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///users.sqlite3'
     #app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= False
-    app.config['MYSQL_HOST'] = "localhost"
+    app.config['MYSQL_HOST'] = "34.68.206.77"
     app.config['MYSQL_USER'] = "root"
     app.config['MYSQL_PASSWORD'] = "Adminpassword123"
     app.config['MYSQL_DB'] = "employeeusers"   
