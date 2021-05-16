@@ -8,9 +8,7 @@ pipeline {
         }
         stage('Test') { 
             steps {
-                sh 'pytest test_unit_app.py' 
-                sh 'pytest test_integration_app.py'
-                sh 'pytest test_functional_app.py'
+                sh 'pytest test_unit_app.py'
             }
         }
         stage('Deploy') { 
