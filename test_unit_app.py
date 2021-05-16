@@ -3,7 +3,7 @@ import json
 import pytest
 import requests
 
-from PythonFlask.handlers.routes import configure_routes
+from handlers.routes import configure_routes
 
 @pytest.fixture
 def app():
