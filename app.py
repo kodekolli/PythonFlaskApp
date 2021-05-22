@@ -2,6 +2,8 @@
 Flask App
 '''
 from flask import Flask
+import flask.scaffold
+flask.helpers._endpoint_from_view_func = flask.scaffold._endpoint_from_view_func
 from flask_restful import Api  # pragma: no cover
 from handlers.routes import configure_routes
 from handlers.api import sampleAPI  # pragma: no cover
