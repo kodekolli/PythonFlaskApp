@@ -4,9 +4,8 @@ RUN apt get update \
     && apt install python3-pip \
     && pip3 install --upgrade pip3 \
     && apt-get install libmysqlclient-dev \
-    && pip3 install flask flask_restful flask_mysqldb \    
+    && pip3 install flask flask_restful flask_mysqldb
 
-WORKDIR /PythonFlaskApp
 COPY . /flaskapp
 RUN export FLASK_APP=app.py
 RUN export FLASK_ENV=development
