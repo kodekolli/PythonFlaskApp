@@ -2,14 +2,14 @@ from ubuntu:18.04
 
 ARG DEBIAN_FRONTEND=noninteractive
 
-RUN apt update
+RUN apt update \
+	&& apt install python3-pip -y \
+	&& pip3 install --upgrade pip \
+	&& apt-get install libmysqlclient-dev -y \
+	&& pip3 install flask flask_restful flask_mysqldb
 
 WORKDIR /flaskapp
 COPY . /flaskapp
-RUN apt install python3-pip -y
-RUN pip3 install --upgrade pip
-RUN apt-get install libmysqlclient-dev -y
-RUN pip3 install flask flask_restful flask_mysqldb
 ENV FLASK_APP=app.py
 ENV FLASK_ENV=development
 ENV LC_ALL=C.UTF-8
