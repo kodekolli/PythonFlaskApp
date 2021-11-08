@@ -168,7 +168,7 @@
                     value: root
                   - name: MYSQL_DB
                     value: employeeusers
-                  image: niranjankolli/eks-demo-lab:latest
+                  image: niranjankolli/python-app:latest
                   imagePullPolicy: Always
                   ports:
-                    - containerPort: 4000
+                    - containerPort: 5000
