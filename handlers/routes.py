@@ -1,5 +1,6 @@
 from flask import Flask, redirect, url_for, request, render_template, session, flash
 import json
+import os, socket
 #from flask_sqlalchemy import SQLAlchemy
 from flask_mysqldb import MySQL
 from datetime import timedelta
@@ -10,10 +11,10 @@ def configure_routes(app):
     app.permanent_session_lifetime = timedelta(minutes=5)
     #app.config['SQLALCHEMY_DATABASE_URI']= 'sqlite:///users.sqlite3'
     #app.config["SQLALCHEMY_TRACK_MODIFICATIONS"]= False
-    app.config['MYSQL_HOST'] = "localhost"
-    app.config['MYSQL_USER'] = "root"
-    app.config['MYSQL_PASSWORD'] = "Adminpassword123"
-    app.config['MYSQL_DB'] = "employeeusers"   
+    app.config['MYSQL_HOST'] = os.getenv("MYSQL_HOST")
+    app.config['MYSQL_USER'] = os.getenv("MYSQL_USER")
+    app.config['MYSQL_PASSWORD'] = os.getenv("MYSQL_PASSWORD")
+    app.config['MYSQL_DB'] = os.getenv("MYSQL_DB")
     
     #db=SQLAlchemy(app)    
     mysql = MySQL(app)
