@@ -9,7 +9,8 @@ RUN apt update \
 	&& pip3 install flask flask_restful flask_mysqldb \
 	&& pip3 install pytest \
 	&& pip3 install coverage \
-	&& pip3 install pylint
+	&& pip3 install pylint \
+	&& pip3 install requests
 
 WORKDIR /flaskapp
 COPY . /flaskapp
