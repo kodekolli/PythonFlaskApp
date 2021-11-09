@@ -7,6 +7,9 @@ RUN apt update \
 	&& pip3 install --upgrade pip \
 	&& apt-get install libmysqlclient-dev -y \
 	&& pip3 install flask flask_restful flask_mysqldb
+	&& pip3 install pytest
+	&& pip3 install coverage
+	&& pip3 install pylint
 
 WORKDIR /flaskapp
 COPY . /flaskapp
