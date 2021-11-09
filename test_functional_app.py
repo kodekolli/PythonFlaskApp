@@ -23,6 +23,7 @@ def test_post_route_login_successfuluser(app):
 def test_post_route_login_successcontent(app):
     payload = {'uname':'hari','psw':'hari'}    
     res = app.post('/login', data=payload, follow_redirects=True)
+    print(res.data)
     assert b'User Details' in res.data
 
 def test_post_route_login_nouser(app):
